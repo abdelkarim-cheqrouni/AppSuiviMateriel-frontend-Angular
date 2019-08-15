@@ -1,0 +1,61 @@
+
+<br>
+
+<h3><strong>Ajouter un equipement :</strong> </h3>
+<div style="text-align:center">
+
+<div [hidden]="submitted" style="width: 300px;">
+  <br>
+  <form (ngSubmit)="onSubmit()"   >
+
+
+
+
+    <div class="form-group">
+      <label for="name"><strong>Equipement :&nbsp;&nbsp; </strong> </label>  <input type="text"  placeholder="le nom d'equipement" id="eq" required [(ngModel)]="produit.equipement" name="eq">
+    </div>
+
+    <div class="form-group">
+      <label ><strong > Marque :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+      <input type="text"  id="marque" required [(ngModel)]="produit.marque" name="marque" placeholder="Entrer la Marque">
+    </div>
+
+
+    <div class="form-group">
+        <label ><strong > Type :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+        <input type="text"  id="type" required [(ngModel)]="produit.type" name="type" placeholder="Entrer le type">
+      </div>
+
+      <div class="form-group">
+          <label ><strong > Date de g :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+          <input type="date"  id="date_garantie" required [(ngModel)]="produit.date_garantie" name="date_garantie" placeholder="Entrer la date ">
+        </div>
+
+
+
+
+    <button type="submit" class="btn btn-info">Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
+    <br>
+    <br>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+
+
+  <br>
+  <br>
+  <h4>Vous avez ajoute avec succes.</h4>
+  <br>
+  <br>
+  <button class="btn btn-info" (click)="newProduit()"> Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
+  <br>
+<br>
+</div>
+</div>
+
+<div>
+
+
+
+</div>

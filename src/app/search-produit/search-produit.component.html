@@ -1,0 +1,22 @@
+<br><h3>Find By id</h3>
+
+<div class="searchCss">
+
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="num_série">  <strong>num_série :</strong></label>
+      <input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+    <li *ngFor="let p of produits">
+    <h4>{{p.id}} - {{p.equipement}} {{p.marque}}</h4>
+  </li>
+</ul>
+</div>

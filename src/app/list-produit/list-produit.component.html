@@ -1,0 +1,53 @@
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Les Produits </h3>
+        <br>
+    </div>
+
+    <div class="panel-body">
+        <table class="table table-bordered table-sm" style="width: 60%; border: solid; margin-left: 20%"  >
+            <thead >
+
+                <tr >
+                  <th ><span>num_serie </span> </th>
+                    <th  ><span> Equipement</span> </th>
+                    <th  ><SPAN>Marque </SPAN>  </th>
+                    <th><span> Type</span> </th>
+                    <th><span>Date de garantie</span> </th>
+                    <th><span>Date de livraison</span> </th>
+                    <th><span>suppression</span></th>
+                    <th><span>modification</span></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produit of produits | async">
+                  <td>{{produit.id}}</td>
+                    <td>{{produit.equipement}}</td>
+                    <td>{{produit.marque}}</td>
+                    <td>{{produit.type}}</td>
+                    <td>{{produit.date_garantie | date: 'dd/MM/yyyy @ hh:mm'}}</td>
+                    <td>{{produit.date_livraison | date: 'dd/MM/yyyy/ hh:mm' }}</td>
+
+
+                    <td><button  class="btn btn-outline-danger" (click)="deleteProduit(produit.id)"><i class='fas fa-trash-alt'>supprimer </i> </button></td>
+                    <td> <button class="btn btn-outline-info"  > <i class='	far fa-edit'>modifier </i></button>      </td>
+
+
+              </tr>
+            </tbody>
+        </table>
+        <br>
+        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1"> Delete All &nbsp;<i class='fas fa-trash-alt'></i> </button> &nbsp;
+
+        <a class="btn btn-info" style="color: aliceblue" href="http://localhost:4200/ajouterProduit">ajouter &nbsp;<i class='fas fa-plus-circle'></i></a>
+
+    </div>
+
+</div>
+<hr>
+<div>
+
+
+</div>

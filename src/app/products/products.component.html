@@ -1,0 +1,44 @@
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3> La table des produits </h3>
+        <br>
+    </div>
+
+    <div class="panel-body">
+        <table  class="table table-bordered table-sm" style="width: 50%; border: solid; margin-left: 25%"  >
+            <thead>
+                <tr>
+                  <th>num_serie</th>
+                    <th>Equipement</th>
+                    <th>Marque</th>
+                    <th>suppression</th>
+                    <th>Modification</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produit of produits | async">
+                  <td>{{produit.id}}</td>
+                    <td>{{produit.equipement}}</td>
+                    <td>{{produit.marque}}</td>
+
+
+                    <td><button  class="btn btn-outline-danger" (click)="deleteProduit(produit.id)"> <i class='fas fa-trash-alt'></i>supprimer</button></td>
+                    <td><button  class="btn btn-outline-info"> <i class='	fas fa-edit'></i>modifier</button></td>
+
+
+              </tr>
+            </tbody>
+        </table>
+        <br>
+        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1">Delete All &nbsp;<i class='fas fa-trash-alt'></i> </button> &nbsp;
+
+        <a class="btn btn-info" style="color: aliceblue" href="http://localhost:4200/suivi">&nbsp; &nbsp; Suivi &nbsp; &nbsp;<i class='fas fa-paste'></i>&nbsp; </a>
+
+
+
+    </div>
+
+</div>
