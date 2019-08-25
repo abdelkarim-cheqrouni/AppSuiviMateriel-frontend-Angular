@@ -2,39 +2,94 @@
 <br>
 
 <h3><strong>Ajouter un equipement :</strong> </h3>
-<div style="text-align:center">
+<div style="text-align:center" >
 
-<div [hidden]="submitted" style="width: 300px;">
+<div [hidden]="submitted" style="width: 300px;"  class="divForm">
   <br>
-  <form (ngSubmit)="onSubmit()"   >
+  <form (ngSubmit)="onSubmit()"  class="form"  >
 
 
 
 
-    <div class="form-group">
-      <label for="name"><strong>Equipement :&nbsp;&nbsp; </strong> </label>  <input type="text"  placeholder="le nom d'equipement" id="eq" required [(ngModel)]="produit.equipement" name="eq">
-    </div>
 
-    <div class="form-group">
-      <label ><strong > Marque :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
-      <input type="text"  id="marque" required [(ngModel)]="produit.marque" name="marque" placeholder="Entrer la Marque">
-    </div>
+<div class="form-group ">
+    <label ><strong > Type d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+
+    <form action="">
+      <select required  [(ngModel)]="produit.equipement" name="eq" class="tt" >
+        <option value="PC" selected > <strong>PC</strong></option>
+        <option value="Imprimante" ><strong>Imprimante</strong></option>
+        <option value="Clavier"><strong>Clavier</strong></option>
+        <option value="Souris"><strong>Souris</strong></option>
+        <option value="USB"><strong>USB</strong></option>
+        <option value="Data Show"><strong>Data Show </strong></option>
+        <option value="autre"><strong>autre</strong></option>
+        </select>
+        <br>
+        <span class="help-block"><strong> </strong> </span>
+      </form></div>
 
 
-    <div class="form-group">
-        <label ><strong > Type :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
-        <input type="text"  id="type" required [(ngModel)]="produit.type" name="type" placeholder="Entrer le type">
-      </div>
+
+
+<div class="form-group">
+    <label ><strong > Marque d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+
+    <form action="demo_form.asp" >
+      <select required  required [(ngModel)]="produit.marque" name="marque"  class="tt">
+          <option value="Apple"> <strong> Apple</strong>   </option>
+          <option value="Asus"> <strong> Asus</strong>   </option>
+          <option value="Acer "> <strong> Acer</strong>   </option>
+          <option value="Lenovo"> <strong>Lenovo</strong>   </option>
+          <option value="HP"> <strong> hp</strong>   </option>
+          <option value="Dell"> <strong> Dell</strong>   </option>
+          <option value="Toshiba "> <strong> Toshiba</strong>   </option>
+
+
+        <option value="Sony"> <strong>Sony</strong></option>
+        <option value="Acer"><strong>Acer</strong></option>
+        <option value="LG"><strong>LG</strong></option>
+        <option value="Samsung "> <strong>Samsung</strong>   </option>
+        <option value="Canon"> <strong > Canon</strong>   </option>
+
+        <option  value="Optoma"><strong>Optoma</strong></option>
+        <option value="Epson"><strong>Epson</strong></option>
+        <option value="Benq"><strong>Benq</strong></option>
+        <option value="Fuji "> <strong> Fuji</strong>   </option>
+
+        <option value="autre"><strong>autre marque</strong></option>
+        </select>
+      </form></div>
+
+
+
+
+
+
+
+<div class="form-group">
+    <label ><strong > Etat d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+
+    <form action="demo_form.asp">
+      <select required  [(ngModel)]="produit.type" name="eq" class="tt">
+        <option value="neuf" selected > <strong>neuf</strong></option>
+        <option value="presque neuf"><strong>presque neuf</strong></option>
+        <option value="utilisé"><strong>utilisé</strong></option>
+        <option value="utilisé"><strong>mauvais</strong></option>
+
+        </select>
+      </form></div>
+
 
       <div class="form-group">
-          <label ><strong > Date de g :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
-          <input type="date"  id="date_garantie" required [(ngModel)]="produit.date_garantie" name="date_garantie" placeholder="Entrer la date ">
+          <label ><strong > Date de garantie :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+          <input type="date"  id="date_garantie" required [(ngModel)]="produit.date_garantie" name="date_garantie" placeholder="Entrer la date " class="tt">
         </div>
 
 
+<br>
 
-
-    <button type="submit" class="btn btn-info">Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
+    <button type="submit" class="btn btn-success"> &nbsp;&nbsp; Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
     <br>
     <br>
   </form>
@@ -48,7 +103,7 @@
   <h4>Vous avez ajoute avec succes.</h4>
   <br>
   <br>
-  <button class="btn btn-info" (click)="newProduit()"> Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
+  <button class="btn btn-success" (click)="newProduit()"> Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
   <br>
 <br>
 </div>

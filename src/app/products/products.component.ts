@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProduitService } from '../produit.service';
 import { Produit } from '../list-produit/produit';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ import { Produit } from '../list-produit/produit';
 })
 export class ProductsComponent implements OnInit {
   produits: Observable<Produit[]>;
-  constructor(private ss: ProduitService) { }
+  constructor(private ss: ProduitService, private router :Router) { }
 
   ngOnInit() {
     this.reloadData();
@@ -40,7 +41,11 @@ export class ProductsComponent implements OnInit {
     this.produits = this.ss.getProduitsList();
   }
 
+updateProduit(produit){
+    this.ss.setter(produit);
+    this.router.navigate(['/op']);
 
+}
 
 
 }

@@ -19,23 +19,32 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let produit of produits | async">
+                <tr *ngFor="let produit of produits | async | paginate: { itemsPerPage: 8, currentPage: p }">
                   <td>{{produit.id}}</td>
                     <td>{{produit.equipement}}</td>
                     <td>{{produit.marque}}</td>
 
 
-                    <td><button  class="btn btn-outline-danger" (click)="deleteProduit(produit.id)"> <i class='fas fa-trash-alt'></i>supprimer</button></td>
-                    <td><button  class="btn btn-outline-info"> <i class='	fas fa-edit'></i>modifier</button></td>
+                    <td><button  class="btn btn-warning" (click)="deleteProduit(produit.id)"> <i class='fas fa-trash-alt'></i> &nbsp;supprimer</button></td>
+                    <td><button  class="btn btn-info" (click)="updateProduit(produit)"> <i class='	fas fa-edit'></i>&nbsp;modifier</button></td>
 
 
               </tr>
             </tbody>
         </table>
-        <br>
-        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1">Delete All &nbsp;<i class='fas fa-trash-alt'></i> </button> &nbsp;
 
-        <a class="btn btn-info" style="color: aliceblue" href="http://localhost:4200/suivi">&nbsp; &nbsp; Suivi &nbsp; &nbsp;<i class='fas fa-paste'></i>&nbsp; </a>
+        <pagination-controls class="myPagination"
+
+        previousLabel ="précédent"
+        nextLabel="suivant"
+          (pageChange)="p = $event" maxSize="5">
+
+        </pagination-controls>
+
+        <br>
+        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1">&nbsp;<i class='fas fa-trash-alt'> &nbsp; EFFCER TOUT  </i> </button> &nbsp;
+
+        &nbsp;  <a class="btn btn-primary" style="color: aliceblue" href="http://localhost:4200/suivi">&nbsp;<i class='fas fa-list'> &nbsp;&nbsp;SUIVI &nbsp; &nbsp; </i></a>
 
 
 

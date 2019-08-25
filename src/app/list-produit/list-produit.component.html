@@ -6,6 +6,7 @@
     </div>
 
     <div class="panel-body">
+
         <table class="table table-bordered table-sm" style="width: 60%; border: solid; margin-left: 20%"  >
             <thead >
 
@@ -13,37 +14,49 @@
                   <th ><span>num_serie </span> </th>
                     <th  ><span> Equipement</span> </th>
                     <th  ><SPAN>Marque </SPAN>  </th>
-                    <th><span> Type</span> </th>
+                    <th><span> Etat</span> </th>
                     <th><span>Date de garantie</span> </th>
                     <th><span>Date de livraison</span> </th>
-                    <th><span>suppression</span></th>
-                    <th><span>modification</span></th>
+                    <th><span>Suppression</span></th>
+                    <th><span>Modification</span></th>
 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let produit of produits | async">
+                <tr *ngFor="let produit of produits | async | paginate: { itemsPerPage: 10, currentPage: p }">
+
                   <td>{{produit.id}}</td>
                     <td>{{produit.equipement}}</td>
                     <td>{{produit.marque}}</td>
                     <td>{{produit.type}}</td>
-                    <td>{{produit.date_garantie | date: 'dd/MM/yyyy @ hh:mm'}}</td>
-                    <td>{{produit.date_livraison | date: 'dd/MM/yyyy/ hh:mm' }}</td>
+                    <td>{{produit.date_garantie | date: 'dd/MM/yyyy '}}</td>
+                    <td>{{produit.date_livraison | date: 'dd/MM/yyyy hh:mm' }}</td>
 
 
-                    <td><button  class="btn btn-outline-danger" (click)="deleteProduit(produit.id)"><i class='fas fa-trash-alt'>supprimer </i> </button></td>
-                    <td> <button class="btn btn-outline-info"  > <i class='	far fa-edit'>modifier </i></button>      </td>
+                    <td><button  class="btn btn-danger" (click)="deleteProduit(produit.id)"> <i class='fas fa-trash-alt'>&nbsp; Supprimer </i> </button></td>
+                    <td> <button class="btn btn-primary" (click)="updateProduit(produit)" > <i class='far fa-edit'> &nbsp;Modifier&nbsp; </i></button>      </td>
 
 
               </tr>
             </tbody>
         </table>
+        <pagination-controls class="myPagination"
+
+        previousLabel="précédent"
+        nextLabel="suivant"
+          (pageChange)="p = $event" maxSize="5">
+        </pagination-controls>
+
+
         <br>
-        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1"> Delete All &nbsp;<i class='fas fa-trash-alt'></i> </button> &nbsp;
+        <button class="btn btn-danger" (click)='deleteProduits()' id="bt1"> <span class="badge badge-light"></span> &nbsp;Effacer tout &nbsp;<i class='fas fa-trash-alt'></i> </button> &nbsp;
 
-        <a class="btn btn-info" style="color: aliceblue" href="http://localhost:4200/ajouterProduit">ajouter &nbsp;<i class='fas fa-plus-circle'></i></a>
+        <a class="btn btn-success" style="color: aliceblue" href="http://localhost:4200/ajouterProduit">&nbsp;<i class='fas fa-plus-circle'> &nbsp;Nouveau </i></a>
+      &nbsp;  <a class="btn btn-primary" style="color: aliceblue" href="http://localhost:4200/produits">&nbsp;<i class='fas fa-list'> &nbsp;Produits </i></a>
 
-    </div>
+
+
+
 
 </div>
 <hr>
@@ -51,3 +64,4 @@
 
 
 </div>
+

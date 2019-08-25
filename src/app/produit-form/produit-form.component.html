@@ -1,0 +1,119 @@
+<h4> Modification de données de l'équipement <span >{{produit.equipement}}</span> de numéro série : <span> {{produit.id}}</span></h4>
+<div  style="width: 300px;" class="fff">
+
+
+<form class="form" (ngSubmit)="onSubmit()"  >
+
+  <div class="form-groop">
+      <label> <strong>numéro de série  :</strong> </label>
+      <div>
+        <span>{{produit.id}}</span>
+      </div>
+
+<div> <br></div>
+  </div>
+  <div  class="form-group">
+    <label>  <strong>Le Type d'équipement  est :  </strong> </label>
+    <div>
+        <span> {{produit.equipement}} </span>
+    </div>
+      <div class="form-group">
+        <br>
+
+          <label ><strong >  changer à  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+
+          <form action="demo_form.asp">
+            <select required  [(ngModel)]="produit.equipement" name="eq" class="tt">
+              <option value="PC" selected > <strong>PC</strong></option>
+              <option value="Imprimante"><strong>Imprimante</strong></option>
+              <option value="Clavier"><strong>Clavier</strong></option>
+              <option value="Souris"><p>Souris</p></option>
+              <option value="USB"><strong>USB</strong></option>
+              <option value="Data Show"><strong>Data Show </strong></option>
+              <option value="autre"><strong>autre</strong></option>
+              </select>
+            </form></div>
+
+    </div>
+
+
+    <div  class="form-group">
+        <label>  <strong>La Marque d'équipement  est :  </strong> </label>
+        <div>
+            <span> {{produit.marque}} </span>
+        </div>
+          <div class="form-group">
+            <br>
+
+              <label ><strong >  changer à  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+              <form action="demo_form.asp" >
+                <select required  required [(ngModel)]="produit.marque" name="marque"  class="tt">
+                    <option value="Apple"> <strong> Apple</strong>   </option>
+                    <option value="Asus"> <strong> Asus</strong>   </option>
+                    <option value="Acer "> <strong> Acer</strong>   </option>
+                    <option value="Lenovo"> <strong>Lenovo</strong>   </option>
+                    <option value="HP"> <strong> hp</strong>   </option>
+                    <option value="Dell"> <strong> Dell</strong>   </option>
+                    <option value="Toshiba "> <strong> Toshiba</strong>   </option>
+
+
+                  <option value="Sony"> <strong>Sony</strong></option>
+                  <option value="Acer"><strong>Acer</strong></option>
+                  <option value="LG"><strong>LG</strong></option>
+                  <option value="Samsung "> <strong>Samsung</strong>   </option>
+                  <option value="Canon"> <strong > Canon</strong>   </option>
+
+                  <option  value="Optoma"><strong>Optoma</strong></option>
+                  <option value="Epson"><strong>Epson</strong></option>
+                  <option value="Benq"><strong>Benq</strong></option>
+                  <option value="Fuji "> <strong> Fuji</strong>   </option>
+
+                  <option value="autre"><strong>autre marque</strong></option>
+                  </select>
+                </form></div>
+
+        </div>
+
+
+
+    <div  class="form-group">
+        <label>  <strong> l'Etat d'équipement  est :  </strong> </label>
+        <div>
+            <span> {{produit.type}} </span>
+        </div>
+          <div class="form-group">
+            <br>
+
+              <label ><strong >  changer à  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+              <form action="demo_form.asp" >
+
+                <select required  [(ngModel)]="produit.type" name="eq" class="tt">
+        <option value="neuf" selected > <strong>neuf</strong></option>
+        <option value="presque neuf"><strong>presque neuf</strong></option>
+        <option value="utilisé"><strong>utilisé</strong></option>
+        <option value="utilisé"><strong>mauvais</strong></option>
+
+        </select>
+                </form></div>
+
+        </div> <br>
+        <label> <strong>la date de garantie est : </strong></label><br>
+            <span> {{produit.date_garantie | date: 'dd/MM/yyyy '}} </span><br><br>
+
+
+          <div class="form-groop">
+            <label><strong>date de garantie :</strong> </label>
+              <input type="date" name="date de g" class="form-control" [(ngModel)]="produit.date_garantie" class="tt">
+
+            </div>
+
+        <br>
+<input type="submit" value="Enregistrer" class="btn btn-success"  >
+<br>
+
+
+
+</form>
+
+
+</div>
