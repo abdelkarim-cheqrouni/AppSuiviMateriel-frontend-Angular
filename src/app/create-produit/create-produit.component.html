@@ -13,19 +13,22 @@
 
 
 <div class="form-group ">
-    <label ><strong > Type d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
+    <label  ><strong > Type d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
 
-    <form action="">
-      <select required  [(ngModel)]="produit.equipement" name="eq" class="tt" >
-        <option value="PC" selected > <strong>PC</strong></option>
+    <form action="" class="was-validated">
+
+      <select required  [(ngModel)]="produit.equipement" name="eq" id="tt" class="custom-select browser-default"  class="form-control form-control-lg" >
+        <option value="Ordinateur" selected > <strong>Ordinateur</strong></option>
         <option value="Imprimante" ><strong>Imprimante</strong></option>
         <option value="Clavier"><strong>Clavier</strong></option>
         <option value="Souris"><strong>Souris</strong></option>
         <option value="USB"><strong>USB</strong></option>
         <option value="Data Show"><strong>Data Show </strong></option>
-        <option value="autre"><strong>autre</strong></option>
+        <option value="autre"><strong>Autre</strong></option>
         </select>
-        <br>
+        <div class="invalid-feedback">selectionner un type d'équipement</div>
+
+
         <span class="help-block"><strong> </strong> </span>
       </form></div>
 
@@ -35,8 +38,10 @@
 <div class="form-group">
     <label ><strong > Marque d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
 
-    <form action="demo_form.asp" >
-      <select required  required [(ngModel)]="produit.marque" name="marque"  class="tt">
+    <form action="demo_form.asp"  class="was-validated" >
+
+      <select required  required [(ngModel)]="produit.marque" name="marque"  id="tt"
+   class="form-control form-control-lg" >
           <option value="Apple"> <strong> Apple</strong>   </option>
           <option value="Asus"> <strong> Asus</strong>   </option>
           <option value="Acer "> <strong> Acer</strong>   </option>
@@ -59,6 +64,12 @@
 
         <option value="autre"><strong>autre marque</strong></option>
         </select>
+
+        <div class="invalid-feedback">selectionner la marque d'équipement</div>
+
+
+        <span class="help-block"><strong> </strong> </span>
+
       </form></div>
 
 
@@ -70,26 +81,28 @@
 <div class="form-group">
     <label ><strong > Etat d'équipement  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
 
-    <form action="demo_form.asp">
-      <select required  [(ngModel)]="produit.type" name="eq" class="tt">
+    <form action="demo_form.asp"  class="needs-validation" novalidate>
+      <select required  [(ngModel)]="produit.type" name="eq" id="tt"  class="form-control form-control-lg">
         <option value="neuf" selected > <strong>neuf</strong></option>
         <option value="presque neuf"><strong>presque neuf</strong></option>
         <option value="utilisé"><strong>utilisé</strong></option>
         <option value="utilisé"><strong>mauvais</strong></option>
 
         </select>
-      </form></div>
+
+      </form>
+      </div>
 
 
       <div class="form-group">
           <label ><strong > Date de garantie :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label>
-          <input type="date"  id="date_garantie" required [(ngModel)]="produit.date_garantie" name="date_garantie" placeholder="Entrer la date " class="tt">
+          <input type="date"  id="date_garantie" required [(ngModel)]="produit.date_garantie" id="tt"  class="form-control form-control-lg" name="date_garantie" placeholder="Entrer la date ">
         </div>
 
 
 <br>
 
-    <button type="submit" class="btn btn-success"> &nbsp;&nbsp; Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
+    <button type="submit" class="btn btn-success"> &nbsp;&nbsp;  Ajouter &nbsp;<i class="fas fa-plus" ></i></button>
     <br>
     <br>
   </form>
@@ -114,3 +127,5 @@
 
 
 </div>
+
+

@@ -23,7 +23,8 @@ padding-bottom: 5px;
 
 
 }
-.tt{
+#tt{
   border: solid;
-  width: 70%;
+  width: 88%;
+  cooro: red;
 }
